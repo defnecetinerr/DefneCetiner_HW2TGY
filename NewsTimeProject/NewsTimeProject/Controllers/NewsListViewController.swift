@@ -8,7 +8,7 @@
 import UIKit
 import NewsAPI
 
-class ViewController: UIViewController, LoadingShowable {
+class NewsListViewController: UIViewController, LoadingShowable {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,7 +39,7 @@ class ViewController: UIViewController, LoadingShowable {
     }
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         news.count
@@ -53,12 +53,11 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedNews = news[indexPath.row]
     
-        let newsTimeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "news") as! NewsTimeDetailViewController
+        let newsTimeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "news") as! NewsDetailViewController
+        newsTimeDetailsVC.selectedNews = selectedNews
         self.navigationController?.pushViewController(newsTimeDetailsVC, animated: true)
-        performSegue(withIdentifier: "news", sender: nil)
+    
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 300
-//    }
 }

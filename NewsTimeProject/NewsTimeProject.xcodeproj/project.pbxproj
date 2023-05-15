@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD190C992A0FCA68007A8B52 /* NewsTimeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD190C982A0FCA68007A8B52 /* NewsTimeDetailViewController.swift */; };
+		FD190C992A0FCA68007A8B52 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD190C982A0FCA68007A8B52 /* NewsDetailViewController.swift */; };
 		FD427C6C2A0D156000FB815C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD427C6B2A0D156000FB815C /* AppDelegate.swift */; };
 		FD427C6E2A0D156000FB815C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD427C6D2A0D156000FB815C /* SceneDelegate.swift */; };
-		FD427C702A0D156000FB815C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD427C6F2A0D156000FB815C /* ViewController.swift */; };
+		FD427C702A0D156000FB815C /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD427C6F2A0D156000FB815C /* NewsListViewController.swift */; };
 		FD427C732A0D156000FB815C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD427C712A0D156000FB815C /* Main.storyboard */; };
 		FD427C762A0D156000FB815C /* NewsTimeProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FD427C742A0D156000FB815C /* NewsTimeProject.xcdatamodeld */; };
 		FD427C782A0D156100FB815C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD427C772A0D156100FB815C /* Assets.xcassets */; };
@@ -46,11 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FD190C982A0FCA68007A8B52 /* NewsTimeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTimeDetailViewController.swift; sourceTree = "<group>"; };
+		FD190C982A0FCA68007A8B52 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		FD427C682A0D156000FB815C /* NewsTimeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsTimeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD427C6B2A0D156000FB815C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD427C6D2A0D156000FB815C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FD427C6F2A0D156000FB815C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD427C6F2A0D156000FB815C /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
 		FD427C722A0D156000FB815C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD427C752A0D156000FB815C /* NewsTimeProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsTimeProject.xcdatamodel; sourceTree = "<group>"; };
 		FD427C772A0D156100FB815C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,8 +100,8 @@
 		FD190C972A0FCA3E007A8B52 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD190C982A0FCA68007A8B52 /* NewsTimeDetailViewController.swift */,
-				FD427C6F2A0D156000FB815C /* ViewController.swift */,
+				FD190C982A0FCA68007A8B52 /* NewsDetailViewController.swift */,
+				FD427C6F2A0D156000FB815C /* NewsListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -344,8 +344,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD427C702A0D156000FB815C /* ViewController.swift in Sources */,
-				FD190C992A0FCA68007A8B52 /* NewsTimeDetailViewController.swift in Sources */,
+				FD427C702A0D156000FB815C /* NewsListViewController.swift in Sources */,
+				FD190C992A0FCA68007A8B52 /* NewsDetailViewController.swift in Sources */,
 				FD427CA42A0E106400FB815C /* UITableViewCell+Extension.swift in Sources */,
 				FD427CAD2A0E1C0A00FB815C /* LoadingShowable.swift in Sources */,
 				FD427CB42A0E32FF00FB815C /* UICornerRadius+Extension.swift in Sources */,
