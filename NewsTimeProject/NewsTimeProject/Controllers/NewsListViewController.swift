@@ -19,6 +19,7 @@ class NewsListViewController: UIViewController, LoadingShowable {
     override func viewWillAppear(_ animated: Bool) {
            super.viewWillAppear(animated)
            fetchNews()
+        
        }
 
     override func viewDidLoad() {
