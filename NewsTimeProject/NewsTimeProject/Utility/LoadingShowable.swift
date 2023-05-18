@@ -16,7 +16,6 @@ extension LoadingShowable {
     func showLoading() {
         LoadingView.shared.startLoading()
     }
-    
     func hideLoading() {
         LoadingView.shared.hideLoading()
     }

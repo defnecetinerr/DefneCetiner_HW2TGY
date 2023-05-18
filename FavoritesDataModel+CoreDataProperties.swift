@@ -1,6 +1,6 @@
 //
 //  FavoritesDataModel+CoreDataProperties.swift
-//  
+//
 //
 //  Created by Defne Çetiner on 18.05.2023.
 //

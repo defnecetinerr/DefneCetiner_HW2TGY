@@ -8,24 +8,26 @@
 import UIKit
 import NewsAPI
 
-class NewsListViewController: UIViewController, LoadingShowable {
+final class NewsListViewController: UIViewController, LoadingShowable {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
-    let service: NewsServiceProtocol = NewsService()
+    private let service: NewsServiceProtocol = NewsService()
     private var news: [News] = []
     private var media: [Multimedia] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchNews()
-        
     }
     
     override func viewDidLoad() {
         tableView.register(.init(nibName: "NewsTimeTableViewCell", bundle: nil),forCellReuseIdentifier: "news")
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
     }
-    fileprivate func fetchNews() {
+    
+      private func fetchNews() {
         self.showLoading()
         service.fetchNews { [weak self] response in
             guard let self else { return }
@@ -34,7 +36,11 @@ class NewsListViewController: UIViewController, LoadingShowable {
             case .success(let news):
                 self.news = news
                 self.tableView.reloadData()
-            case .failure(let error): break
+            case .failure(let error):
+                let alertController = UIAlertController(title: "Hata", message: error.localizedDescription, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Tamam", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
@@ -45,17 +51,16 @@ extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         news.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! NewsTimeTableViewCell
-        
         let news = self.news[indexPath.row]
         cell.configure(news: news)
-        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedNews = news[indexPath.row]
-        
         let newsTimeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "news") as! NewsDetailViewController
         newsTimeDetailsVC.selectedNews = selectedNews
         self.navigationController?.pushViewController(newsTimeDetailsVC, animated: true)

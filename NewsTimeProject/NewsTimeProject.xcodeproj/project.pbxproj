@@ -101,6 +101,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD00CEFC2A166ED700908072 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FD427C6B2A0D156000FB815C /* AppDelegate.swift */,
+				FD427C6D2A0D156000FB815C /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FD00CEFD2A166F0300908072 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FD427C712A0D156000FB815C /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FD00CEFE2A166F0E00908072 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FD427C792A0D156100FB815C /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		FD190C972A0FCA3E007A8B52 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,18 +161,17 @@
 		FD427C6A2A0D156000FB815C /* NewsTimeProject */ = {
 			isa = PBXGroup;
 			children = (
-				FD190C972A0FCA3E007A8B52 /* Controllers */,
+				FD00CEFC2A166ED700908072 /* Application */,
+				FD427C772A0D156100FB815C /* Assets.xcassets */,
 				FD427CAE2A0E2F9300FB815C /* Cells */,
+				FD190C972A0FCA3E007A8B52 /* Controllers */,
+				FD427CA02A0E0DC300FB815C /* Extensions */,
+				FD427C7C2A0D156100FB815C /* Info.plist */,
+				FD00CEFE2A166F0E00908072 /* LaunchScreen */,
+				FD00CEFD2A166F0300908072 /* Main */,
+				FD427C742A0D156000FB815C /* NewsTimeProject.xcdatamodeld */,
 				FD427CAB2A0E1BC200FB815C /* Utility */,
 				FD427CA82A0E18D600FB815C /* Views */,
-				FD427CA02A0E0DC300FB815C /* Extensions */,
-				FD427C6B2A0D156000FB815C /* AppDelegate.swift */,
-				FD427C6D2A0D156000FB815C /* SceneDelegate.swift */,
-				FD427C712A0D156000FB815C /* Main.storyboard */,
-				FD427C772A0D156100FB815C /* Assets.xcassets */,
-				FD427C792A0D156100FB815C /* LaunchScreen.storyboard */,
-				FD427C7C2A0D156100FB815C /* Info.plist */,
-				FD427C742A0D156000FB815C /* NewsTimeProject.xcdatamodeld */,
 			);
 			path = NewsTimeProject;
 			sourceTree = "<group>";

@@ -12,14 +12,14 @@ import SafariServices
 import CoreData
 
 
-class NewsDetailViewController: UIViewController {
+final class NewsDetailViewController: UIViewController {
     
-    @IBOutlet weak var titleDetailLabel: UILabel!
-    @IBOutlet weak var largeImageView: UIImageView!
-    @IBOutlet weak var authorDetailLabel: UILabel!
-    @IBOutlet weak var abstractDetailLabel: UILabel!
-    @IBOutlet weak var categoriesDetailLabel: UILabel!
-    @IBOutlet weak var likeButtonOutlet: UIButton!
+    @IBOutlet private weak var titleDetailLabel: UILabel!
+    @IBOutlet private weak var largeImageView: UIImageView!
+    @IBOutlet private weak var authorDetailLabel: UILabel!
+    @IBOutlet private weak var abstractDetailLabel: UILabel!
+    @IBOutlet private weak var categoriesDetailLabel: UILabel!
+    @IBOutlet private weak var likeButton: UIButton!
     
     var selectedNews: News?
     var newsDetail: News?
@@ -30,33 +30,32 @@ class NewsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let news = selectedNews {
-            titleDetailLabel.text = news.title
-            authorDetailLabel.text = news.byline
-            abstractDetailLabel.text = news.abstract
-            categoriesDetailLabel.text = news.section
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        if let selectedNews {
+            titleDetailLabel.text = selectedNews.title
+            authorDetailLabel.text = selectedNews.byline
+            abstractDetailLabel.text = selectedNews.abstract
+            categoriesDetailLabel.text = selectedNews.section
             
-            if let media = news.multimedia?.first, let urlString = media.url, let url = URL(string: urlString){
+            if let media = selectedNews.multimedia?.first, let urlString = media.url, let url = URL(string: urlString) {
                 largeImageView?.sd_setImage(with: url, placeholderImage: nil)
             }
         }
-        if let favoriteNews = favoriteNews {
+        if let favoriteNews {
             titleDetailLabel.text = favoriteNews.value(forKey: "title_fav") as? String
             abstractDetailLabel.text = favoriteNews.value(forKey: "description_fav") as? String
             authorDetailLabel.text = favoriteNews.value(forKey: "author_fav") as? String
             categoriesDetailLabel.text = favoriteNews.value(forKey: "categories_fv") as? String
-            if let favoriteImageString = favoriteNews.value(forKey: "image_fav") as? String {
-                if let imageData = Data(base64Encoded: favoriteImageString) {
-                    if let image = UIImage(data: imageData) {
-                        largeImageView.image = image
-                    }
-                }
+            if let favoriteImageString = favoriteNews.value(forKey: "image_fav") as? String,
+               let imageData = Data(base64Encoded: favoriteImageString),
+               let image = UIImage(data: imageData) {
+                largeImageView.image = image
             }
         }
     }
     
-    @IBAction func seeMoreButton(_ sender: Any) {
+    @IBAction private func tappedSeeMoreButton(_ sender: Any) {
         if let urlString = selectedNews?.url {
             print("Selected News URL: \(urlString)")
             if let url = URL(string: urlString) {
@@ -74,31 +73,24 @@ class NewsDetailViewController: UIViewController {
         }
     }
     
-    @IBAction func goBackButton(_ sender: Any) {
+    @IBAction private func tappedGoBackButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func favoriteButton(_ sender: Any) {
-        
+    @IBAction func tappedFavoriteButton(_ sender: Any) { 
         if isFavorite {
-            likeButtonOutlet.setImage(UIImage(systemName: "star"), for: .normal)
+            likeButton.setImage(UIImage(systemName: "star"), for: .normal)
             isFavorite = false
         } else {
-            likeButtonOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
+            likeButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
             isFavorite = true
             let favoriteTitle = titleDetailLabel.text ?? ""
-            
-            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-                return
-            }
-            
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
             let context = appDelegate.persistentContainer.viewContext
             let fetchRequest: NSFetchRequest<FavoritesDataModel> = FavoritesDataModel.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "title_fav == %@", favoriteTitle)
-            
             do {
                 let results = try context.fetch(fetchRequest)
-                
                 if results.isEmpty {
                     let newFavorite = FavoritesDataModel(context: context)
                     newFavorite.id = UUID()

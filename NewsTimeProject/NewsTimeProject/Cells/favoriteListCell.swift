@@ -8,25 +8,26 @@
 import UIKit
 import NewsAPI
 
-class favoriteListCell: UITableViewCell {
+final class favoriteListCell: UITableViewCell {
     
     @IBOutlet weak var favoriteImage: UIImageView!
-    @IBOutlet weak var favoriteAuthor: UILabel!
-    @IBOutlet weak var sectionFavLabel: UILabel!
-    @IBOutlet weak var titleFavLabel: UILabel!
-    @IBOutlet weak var destriptionFavLabel: UILabel!
+    @IBOutlet private weak var favoriteAuthor: UILabel!
+    @IBOutlet private weak var sectionFavLabel: UILabel!
+    @IBOutlet private weak var titleFavLabel: UILabel!
+    @IBOutlet private weak var destriptionFavLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
     func configure(news: FavoritesDataModel) {
         titleFavLabel.text = news.title_fav
         favoriteAuthor.text = news.author_fav
         destriptionFavLabel.text = news.description_fav
         sectionFavLabel.text = news.categories_fv
     }
-    
 }

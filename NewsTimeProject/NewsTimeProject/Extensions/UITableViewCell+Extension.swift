@@ -11,9 +11,8 @@ import UIKit
 extension UITableViewCell {
     
     static var identifier: String {
-        return String(describing: self) // dosyanın adı ne olduysa adı aynı olsun
+        return String(describing: self)
     }
-    
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
     }

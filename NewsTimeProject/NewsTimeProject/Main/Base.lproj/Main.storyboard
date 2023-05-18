@@ -66,7 +66,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
                                                 <connections>
-                                                    <action selector="favoriteButton:" destination="zkH-Kb-NuZ" eventType="touchUpInside" id="Wry-MO-72w"/>
+                                                    <action selector="tappedFavoriteButton:" destination="zkH-Kb-NuZ" eventType="touchUpInside" id="EfM-DI-1Rj"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ece-eO-8ag">
@@ -117,7 +117,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="seeMoreButton:" destination="zkH-Kb-NuZ" eventType="touchUpInside" id="4EQ-Aj-Y8a"/>
+                                                    <action selector="tappedSeeMoreButton:" destination="zkH-Kb-NuZ" eventType="touchUpInside" id="ciC-4A-PfT"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -145,7 +145,7 @@
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="rewind" id="wgb-dD-hr0">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="goBackButton:" destination="zkH-Kb-NuZ" id="d4y-dH-h55"/>
+                                <action selector="tappedGoBackButton:" destination="zkH-Kb-NuZ" id="nKd-tk-ehp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -154,7 +154,7 @@
                         <outlet property="authorDetailLabel" destination="eLH-bP-ava" id="EQB-2O-nfb"/>
                         <outlet property="categoriesDetailLabel" destination="rI7-JW-4YB" id="Wnf-sr-b2l"/>
                         <outlet property="largeImageView" destination="ece-eO-8ag" id="aAD-eI-Ks3"/>
-                        <outlet property="likeButtonOutlet" destination="Q5L-U4-0Zj" id="Afq-tb-msB"/>
+                        <outlet property="likeButton" destination="Q5L-U4-0Zj" id="Afq-tb-msB"/>
                         <outlet property="titleDetailLabel" destination="L4z-aq-hAF" id="CAu-P7-nLV"/>
                     </connections>
                 </viewController>
@@ -171,6 +171,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7QV-bp-lEf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="STIXTwoMath-Regular" family="STIX Two Math" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,8 +196,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="QlZ-if-GQb">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="qSV-sw-MaF" id="E2L-Rb-u9n"/>
                                     <outlet property="delegate" destination="qSV-sw-MaF" id="7xu-mS-y8n"/>
