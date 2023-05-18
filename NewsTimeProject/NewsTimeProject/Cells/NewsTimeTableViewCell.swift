@@ -20,10 +20,7 @@ class NewsTimeTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-      
     }
-    
     func configure(news: News) {
         titleTextLabel?.text = news.title
         author?.text = news.byline

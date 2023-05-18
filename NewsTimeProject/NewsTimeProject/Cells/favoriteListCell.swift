@@ -18,20 +18,15 @@ class favoriteListCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        
     }
-    
     func configure(news: FavoritesDataModel) {
         titleFavLabel.text = news.title_fav
         favoriteAuthor.text = news.author_fav
         destriptionFavLabel.text = news.description_fav
         sectionFavLabel.text = news.categories_fv
     }
-
+    
 }

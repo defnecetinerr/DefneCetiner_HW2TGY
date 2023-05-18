@@ -12,15 +12,11 @@ import Foundation
 
 class FavoriteNewsViewController: UIViewController {
     
-    
     @IBOutlet weak var favoriteListTableView: UITableView!
-    
     var favoriteNewsList: [FavoritesDataModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +25,6 @@ class FavoriteNewsViewController: UIViewController {
     }
     
     func fetchData() {
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }

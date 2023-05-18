@@ -26,7 +26,6 @@ class NewsDetailViewController: UIViewController {
     var favoriteNews: NSManagedObject?
     var isFavorite = false
     @NSManaged public var url_fav: String?
-    
     let url = URL(string: "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=kM36SrggFUFOtOXiBWtlBthxiHYiNF0R#")
     
     override func viewDidLoad() {
@@ -75,7 +74,6 @@ class NewsDetailViewController: UIViewController {
         }
     }
     
-    
     @IBAction func goBackButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -88,8 +86,6 @@ class NewsDetailViewController: UIViewController {
         } else {
             likeButtonOutlet.setImage(UIImage(systemName: "star.fill"), for: .normal)
             isFavorite = true
-            
-            // Favori verinin var olup olmadığını kontrol etmek için başlık bilgisini kullanıyoruz.
             let favoriteTitle = titleDetailLabel.text ?? ""
             
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -97,8 +93,6 @@ class NewsDetailViewController: UIViewController {
             }
             
             let context = appDelegate.persistentContainer.viewContext
-            
-            // Başlık bilgisine göre favori haberleri sorgulayalım
             let fetchRequest: NSFetchRequest<FavoritesDataModel> = FavoritesDataModel.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "title_fav == %@", favoriteTitle)
             
@@ -106,7 +100,6 @@ class NewsDetailViewController: UIViewController {
                 let results = try context.fetch(fetchRequest)
                 
                 if results.isEmpty {
-                    // Sonuçlar boş ise, yani bu başlığa sahip favori haber daha önce eklenmemişse, yeni bir favori verisi oluşturup kaydedelim.
                     let newFavorite = FavoritesDataModel(context: context)
                     newFavorite.id = UUID()
                     newFavorite.author_fav = authorDetailLabel.text
@@ -121,7 +114,6 @@ class NewsDetailViewController: UIViewController {
                     try context.save()
                     print("Veri favorilere eklendi.")
                 } else {
-                    // Sonuçlar boş değilse, yani bu başlığa sahip favori haber zaten varsa, bir hata mesajı gösterebilirsiniz.
                     print("Bu haber zaten favorilere eklenmiş!")
                 }
             } catch {

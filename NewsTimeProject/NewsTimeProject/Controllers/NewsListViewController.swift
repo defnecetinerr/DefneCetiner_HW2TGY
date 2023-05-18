@@ -17,11 +17,11 @@ class NewsListViewController: UIViewController, LoadingShowable {
     private var media: [Multimedia] = []
     
     override func viewWillAppear(_ animated: Bool) {
-           super.viewWillAppear(animated)
-           fetchNews()
+        super.viewWillAppear(animated)
+        fetchNews()
         
-       }
-
+    }
+    
     override func viewDidLoad() {
         tableView.register(.init(nibName: "NewsTimeTableViewCell", bundle: nil),forCellReuseIdentifier: "news")
     }
@@ -47,18 +47,18 @@ extension NewsListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "news", for: indexPath) as! NewsTimeTableViewCell
-
+        
         let news = self.news[indexPath.row]
         cell.configure(news: news)
-
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedNews = news[indexPath.row]
-    
+        
         let newsTimeDetailsVC = storyboard?.instantiateViewController(withIdentifier: "news") as! NewsDetailViewController
         newsTimeDetailsVC.selectedNews = selectedNews
         self.navigationController?.pushViewController(newsTimeDetailsVC, animated: true)
-    
+        
     }
 }
