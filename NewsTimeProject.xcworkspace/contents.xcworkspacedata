@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:FavoritesDataModel+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:FavoritesDataModel+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:NewsTimeProject/NewsTimeProject.xcodeproj">
    </FileRef>
 </Workspace>

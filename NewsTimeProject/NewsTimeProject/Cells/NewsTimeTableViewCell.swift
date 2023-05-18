@@ -21,7 +21,7 @@ class NewsTimeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        // Initialization code
+      
     }
     
     func configure(news: News) {
@@ -30,8 +30,10 @@ class NewsTimeTableViewCell: UITableViewCell {
         categoryLabel?.text = news.section
         abstractLabel.text = news.abstract
 
-        if let media = news.multimedia?.first, let urlString = media.url, let url = URL(string: urlString){
-            newsImage?.sd_setImage(with: url, placeholderImage: nil)
-        }
+        if let media = news.multimedia?.first, let urlString = media.url, let url = URL(string: urlString) {
+                newsImage.sd_setImage(with: url, placeholderImage: nil)
+            } else {
+                newsImage.image = nil
+            }
     }
 }

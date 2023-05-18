@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD00CEF42A16108000908072 /* FavoriteNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00CEF32A16108000908072 /* FavoriteNewsViewController.swift */; };
+		FD00CEF62A1610BE00908072 /* favoriteListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD00CEF52A1610BE00908072 /* favoriteListCell.swift */; };
 		FD190C992A0FCA68007A8B52 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD190C982A0FCA68007A8B52 /* NewsDetailViewController.swift */; };
 		FD427C6C2A0D156000FB815C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD427C6B2A0D156000FB815C /* AppDelegate.swift */; };
 		FD427C6E2A0D156000FB815C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD427C6D2A0D156000FB815C /* SceneDelegate.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD00CEF32A16108000908072 /* FavoriteNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNewsViewController.swift; sourceTree = "<group>"; };
+		FD00CEF52A1610BE00908072 /* favoriteListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = favoriteListCell.swift; sourceTree = "<group>"; };
 		FD190C982A0FCA68007A8B52 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		FD427C682A0D156000FB815C /* NewsTimeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsTimeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD427C6B2A0D156000FB815C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 			children = (
 				FD190C982A0FCA68007A8B52 /* NewsDetailViewController.swift */,
 				FD427C6F2A0D156000FB815C /* NewsListViewController.swift */,
+				FD00CEF32A16108000908072 /* FavoriteNewsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 			children = (
 				FD427CB82A0E75C800FB815C /* NewsTimeTableViewCell.swift */,
 				FD427CB92A0E75C800FB815C /* NewsTimeTableViewCell.xib */,
+				FD00CEF52A1610BE00908072 /* favoriteListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -346,8 +352,10 @@
 			files = (
 				FD427C702A0D156000FB815C /* NewsListViewController.swift in Sources */,
 				FD190C992A0FCA68007A8B52 /* NewsDetailViewController.swift in Sources */,
+				FD00CEF42A16108000908072 /* FavoriteNewsViewController.swift in Sources */,
 				FD427CA42A0E106400FB815C /* UITableViewCell+Extension.swift in Sources */,
 				FD427CAD2A0E1C0A00FB815C /* LoadingShowable.swift in Sources */,
+				FD00CEF62A1610BE00908072 /* favoriteListCell.swift in Sources */,
 				FD427CB42A0E32FF00FB815C /* UICornerRadius+Extension.swift in Sources */,
 				FD427C6C2A0D156000FB815C /* AppDelegate.swift in Sources */,
 				FD427C6E2A0D156000FB815C /* SceneDelegate.swift in Sources */,

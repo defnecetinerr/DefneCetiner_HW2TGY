@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="22A400" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FavoritesDataModel" representedClassName="FavoritesDataModel" syncable="YES" codeGenerationType="class">
+        <attribute name="author_fav" optional="YES" attributeType="String"/>
+        <attribute name="categories_fv" optional="YES" attributeType="String"/>
+        <attribute name="description_fav" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image_fav" optional="YES" attributeType="String"/>
+        <attribute name="title_fav" optional="YES" attributeType="String"/>
+        <attribute name="url_fav" optional="YES" attributeType="String"/>
+    </entity>
 </model>
