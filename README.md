@@ -2,9 +2,8 @@
 # NewsTimeProject
 * Turkcell Geleceği Yazanlar 2023 Dönemi, 2. Proje
 ----------------------------------------------------------------------------------
-## New York Times - Top Stories project document
+## New York Times - Top Stories 
 
-<img width="558" alt="HW-2" src="https://github.com/defnecetinerr/DefneCetiner_HW2TGY/assets/96814278/cac61e8f-d6b0-4259-8369-03ce0ebf3540">
 
 ----------------------------------------------------------------------------------
 ## Functional Features
